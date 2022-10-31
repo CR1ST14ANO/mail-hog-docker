@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    restart: unless-stopped
+    ports:
+      - 8025:8025
+    networks:
+      - shared_mailhog
+networks:
+  shared_mailhog:
+    external: true
